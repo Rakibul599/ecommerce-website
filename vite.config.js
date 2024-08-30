@@ -6,3 +6,4 @@ export default defineConfig({
   "base": "/ecommerce-website/",
   plugins: [react()],
 })
+
