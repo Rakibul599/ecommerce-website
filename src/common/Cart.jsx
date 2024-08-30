@@ -19,8 +19,8 @@ function Cart({ cartStutus, setCartstutus,cartItems, setCartitems }) {
         }`}
       ></div>
       <div
-        className={`fixed bg-white w-[40%] h-[100vh] z-[1] ${
-          cartStutus ? "right-0" : "right-[-50%]"
+        className={`fixed bg-white w-full md:w-[40%] h-[100vh] z-[1] ${
+          cartStutus ? "right-0" : "right-[-100%]"
         }  top-0 duration-500 overflow-y-auto`}
       >
         <div>
@@ -29,7 +29,7 @@ function Cart({ cartStutus, setCartstutus,cartItems, setCartitems }) {
           </button>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-center font-serif font-semibold text-2xl ">
+          <h1 className="text-center mb-2 font-serif font-semibold text-2xl ">
             Your Cart
           </h1>
 {/*  */}  {items}
@@ -79,7 +79,7 @@ function Allcart({cartdata,cartItems,setCartitems})
   }
 
   return(
-  <div className="grid grid-cols-3 justify-center items-center gap-16 ml-2 ">
+  <div className="grid grid-cols-3 justify-center items-center gap-16 ml-2 mb-2">
   <img
     src={cartdata.thumbnail}
     alt=""

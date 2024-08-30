@@ -93,10 +93,10 @@ function Productitem({pdata,setCartcount,cartCount,cartItems,setCartitems})
     <h3 className="font-serif text-xl h-9 overflow-hidden p-1">{pdata.title}</h3>
     <p>{pdata.price} $</p>
     <div className="flex flex-col md:flex-row w-[60%] mx-auto gap-2 md:space-x-4 mt-7  md:mt-5 ">
-      <button onClick={()=>{setCartcount(cartCount+1);addtoCart()}} className="border-[1px] bg-yellow-600 w-full h-10 md:w-20 p-1 rounded-md">
+      <button onClick={()=>{setCartcount(cartCount+1);addtoCart()}} className="border-[1px] bg-yellow-600 w-full h-10 md:w-20 p-1 text-sm font-semibold inline-block md:whitespace-nowrap md:overflow-x-auto rounded-md">
         Add cart
       </button>
-      <button className="border-[1px] bg-yellow-600 h-10 w-full md:w-20 p-1 rounded-md">
+      <button className="border-[1px] bg-yellow-600 h-10 w-full md:w-20 p-1 text-sm font-semibold rounded-md">
         Buy
       </button>
     </div>

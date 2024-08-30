@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import mylogo from '../images/logo-color.png'
+import mylogo from "../images/logo-color.png";
 
 function Nav({
   catStustus,
@@ -27,7 +27,11 @@ function Nav({
       <div>
         <div className="bg-[#eef3f7] border-b-2 w-full h-[80px] flex justify-center items-center font-mono z-[1] fixed">
           <nav className="flex">
-          <img src={mylogo} className=" absolute h-[70x] w-[90px] top-[-8px] mr-16  md:h-[200px] md:w-[300px] md:mr-14 left-0 md:top-[-60px]" alt="" />
+            <img
+              src={mylogo}
+              className=" absolute h-[70x] w-[90px] top-[-8px] mr-16  md:h-[200px] ml-0 md:w-[300px] md:mr-14 left-0 md:top-[-60px] overflow-x-auto"
+              alt=""
+            />
             <div className="relative mr-6">
               <input
                 type="text"
@@ -46,7 +50,12 @@ function Nav({
                 />
               </button>
             </div>
-            <div className="">
+            <div className=" ">
+              <div
+                className={`bgtransf w-[100vh] h-[100vh] left-0 top-20 fixed ${
+                  menu ? "" : "hidden"
+                }`}
+              ></div>
               <ul
                 className={`bg-yellow-500 absolute cursor-pointer  ${
                   menu ? "right-[0px]" : "right-[-100%] hidden"
@@ -78,13 +87,13 @@ function Nav({
                 <li>Singn up</li>
               </ul>
               <ul className="md:hidden absolute right-10 ">
-              <li
+                <li
                   className="relative"
                   onClick={() => setCartstutus(!cartStutus)}
                 >
                   Cart
                   <span
-                    className={`md:absolute  md:right-[-17px] top-[-15px] bg-red-600  h-[25px] w-[25px] rounded-full ${
+                    className={`absolute  right-[-10px] text-center top-[-10px] bg-red-600  h-[20px] w-[20px] rounded-full ${
                       cartItems.length > 0 ? "" : "hidden"
                     }`}
                   >
