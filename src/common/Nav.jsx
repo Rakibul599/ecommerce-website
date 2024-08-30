@@ -39,7 +39,7 @@ function Nav({
                 id=""
                 onChange={(e) => setStr(e.target.value)}
                 value={searchStr}
-                className="bg-white border-[2px] border-[#bbbdc0] w-[200px] md:w-[400px] h-[30px]  italic rounded-full "
+                className="bg-white border-[2px] border-[#bbbdc0] w-[170px] md:w-[400px] h-[30px]  italic rounded-full "
               />
               <button className="bg-white h-[25px] w-[20px] absolute top-[1.5px] right-[15px] ]">
                 <img
