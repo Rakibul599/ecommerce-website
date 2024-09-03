@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function Cart({ cartStutus, setCartstutus,cartItems, setCartitems }) {
   
   let items=cartItems.map((v,i)=>{
@@ -7,12 +6,15 @@ function Cart({ cartStutus, setCartstutus,cartItems, setCartitems }) {
       <Allcart key={i} cartdata={v} cartItems={cartItems} setCartitems={setCartitems}/>
     )
   })
+
   let deleteallitem=()=>{
     setCartitems([]);
+    toast.success("Successfully Cleared")
     
   }
   return (
     <div className="relative">
+     
       <div
         className={`bgtransf w-full h-[100vh] z-[1] fixed ${
           cartStutus ? "" : "hidden"
@@ -53,7 +55,7 @@ function Allcart({cartdata,cartItems,setCartitems})
             if(newIt[i].oldprice==0) newIt[i].oldprice=newIt[i].price;
             
             newIt[i].count+=1;
-            newIt[i].price+=newIt[i].oldprice;
+            newIt[i].price=(newIt[i].oldprice*newIt[i].count).toFixed(2);
           }
       }
      setCartitems(newIt);
@@ -68,7 +70,7 @@ function Allcart({cartdata,cartItems,setCartitems})
             if(newIt[i].oldprice==0) newIt[i].oldprice=newIt[i].price;
             
             newIt[i].count-=1;
-            newIt[i].price-=newIt[i].oldprice;
+            newIt[i].price=(newIt[i].oldprice*newIt[i].count).toFixed(2);
           }
       }
      setCartitems(newIt);
@@ -80,6 +82,7 @@ function Allcart({cartdata,cartItems,setCartitems})
 
   return(
   <div className="grid grid-cols-3 justify-center items-center gap-16 ml-2 mb-2">
+   
   <img
     src={cartdata.thumbnail}
     alt=""
@@ -90,7 +93,7 @@ function Allcart({cartdata,cartItems,setCartitems})
     <p className="text-red-500 cursor-pointer" onClick={()=>Delteitem()}>remove</p>
   </div>
   <div>
-    <p><span className="text-2xl" onClick={()=>decreaseProduct()}>-</span> <span className="text-2xl">{cartdata.count}</span> <span className="text-2xl" onClick={()=>increaseProduct()}>+</span></p>
+    <p><span className="text-2xl bg-slate-200 p-1 rounded-md cursor-pointer" onClick={()=>decreaseProduct()}>-</span> <span className="text-2xl">{cartdata.count}</span> <span className="text-2xl bg-slate-200 p-1 rounded-md  cursor-pointer" onClick={()=>increaseProduct()}>+</span></p>
   </div>
 </div>
   )
