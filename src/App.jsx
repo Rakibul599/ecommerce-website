@@ -5,6 +5,7 @@ import "./App.css";
 import Nav from "./common/Nav";
 import Body from "./common/Body";
 import Cart from "./common/Cart";
+import Footer from "./common/Footer";
 
 function App() {
   let [catStustus, setCatstutus] = useState(false);
@@ -43,6 +44,7 @@ function App() {
         cartItems={cartItems}
         setCartitems={setCartitems}
       />
+      <Footer />
     </>
   );
 }

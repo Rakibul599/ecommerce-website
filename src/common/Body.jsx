@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Category from "./Category";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Body({catStustus,setCatstutus,finalProduct,setFinaproduct,cartCount,setCartcount,cartItems,setCartitems}) {
   let [finalcatagory, setFinalcatagory] = useState([]);
@@ -43,7 +45,9 @@ function Body({catStustus,setCatstutus,finalProduct,setFinaproduct,cartCount,set
   },[catName])
 
   return (
+    
     <div className="bg-[#eef3f7] h-full py-5 font-serif">
+      <ToastContainer />
       <div className="w-[95%] mx-auto">
         <h1 className="text-center text-[40px] mb-[30px]">Our Products</h1>
         <div className="md:grid md:grid-cols-[30%_auto] md:gap-[30px]">
@@ -74,7 +78,7 @@ function Productitem({pdata,setCartcount,cartCount,cartItems,setCartitems})
       setCartitems(newCartit)
     }
     else {
-        alert("Already added in Cart")
+        toast.error("Already added in Cart")
     }
     
 
